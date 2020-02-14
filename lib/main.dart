@@ -58,7 +58,6 @@ class ChatsState extends State<Chats>{
                     subtitle: Text(text[index]),
                     trailing: Text(''),
                   ),
-                  //Divider(),
                 ],
               );
             }),
@@ -80,6 +79,19 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin{
 
   TabController _tabController;
   ScrollController _scrollController;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: 4 );
+  }
+
+ @override
+ void dispose() {
+   _tabController.dispose();
+   super.dispose();
+ }
 
 
 @override
